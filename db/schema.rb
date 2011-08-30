@@ -10,11 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110830195007) do
+ActiveRecord::Schema.define(:version => 20110830200739) do
 
   create_table "auxiliary_email_addresses", :force => true do |t|
     t.integer  "user_id"
     t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "stars", :force => true do |t|
+    t.integer  "sender_id"
+    t.integer  "reciever_id"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,24 @@
+<%= form_for @star do |form| %>
+	<fieldset>
+		<legend>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Send A Star</legend>
+		<div class="clearfix">
+		  <%= form.label :recipient %>
+		  <div class="input">
+		    <%= form.text_field :recipient %>
+		  </div>
+		</div>
+		<div class="clearfix">
+		  <%= form.label :description %>
+		  <div class="input">
+		    <%= form.text_field :description %>
+		  </div>
+		</div>
+		<div class="clearfix">
+		  <div class="input">
+		    <button class="btn success">Send <span class="gold">&#9733;</span></button>
+		  </div>
+		</div>
+	</fieldset>
+<% end %>

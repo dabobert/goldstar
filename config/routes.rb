@@ -58,7 +58,12 @@ Goldstar::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
   
-  #devise_for :users
+  devise_for :users
+  resource :leaderboard
   resources :stars
+  namespace :stars do
+    resource :send
+  end
   root :to=> "stars#index"
+  
 end
