@@ -1,3 +1,7 @@
 .gold {
 	color: gold;
 }
+
+fieldset.devise legend {
+	border-left: 200px !important; 
+}
