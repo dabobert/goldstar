@@ -1,5 +1,5 @@
 <div class="topbar">
-      <div class="fill">
+	<div class="fill">
     <div class="container">
       <h3>
 				<a href="/"><%= filled_star %><%= hollow_star %>GoldSt.ar</a>
@@ -20,7 +20,7 @@
 					<li><%= link_to "Login", new_user_session_path %></li>
 				<% end %>
 				<li><a href="#">Help</a></li>
-				<%= raw "<li></li><li>Logged in as #{current_user.email}</li>" if user_signed_in? %>
+				<%= raw "<li class='logged_in_name'>Logged in as #{current_user.email}</li>" if user_signed_in? %>
       </ul>
     </div>
   </div>

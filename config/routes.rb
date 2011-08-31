@@ -38,7 +38,10 @@ Goldstar::Application.routes.draw do
   devise_for :users
   resource :leaderboard
   resource :profile
-  resources :users
+  resource :home
+  resources :users do
+    resources :stars
+  end
   resources :stars
   root :to=> "stars#index"
   

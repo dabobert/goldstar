@@ -16,4 +16,8 @@ class Profile < ActiveRecord::Base
     profile
   end
   
+  def stars
+    Star.where("sender_id = ? or reciever_id = ?", self.id, self.id).order("id desc")
+  end
+  
 end

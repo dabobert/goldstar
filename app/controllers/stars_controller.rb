@@ -25,6 +25,12 @@ class StarsController < ApplicationController
   end
   
   def index
-    @stars = Star.descending
+    if params[:user_id].blank?
+      @prefix = "All"
+      @stars = Star.descending
+    else
+      @prefix = "My"
+      @stars = current_user.profile.stars
+    end
   end
 end

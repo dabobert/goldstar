@@ -1,0 +1,6 @@
+<tr>
+	<td><%= star_row.reciever_str %></td>
+	<td>recieved a <%= gold_star %> <%= star_row.description %></td>
+	<td>from <%= star_row.sender_str %></td>
+	<td><%= link_to("[X]", star_path(star_row), :method => :delete, :confirm => "Are you sure?" ) if star_row.owned_by? current_user.profile %></td>
+</tr>

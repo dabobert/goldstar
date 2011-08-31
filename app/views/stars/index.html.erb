@@ -1,10 +1,8 @@
+<h3><%= @prefix %> Stars</h3>
 <table class="star_table">
-	<% @stars.each do |star| %>
-		<tr>
-			<td><%= star.reciever_str %></td>
-			<td>recieved a <%= gold_star %> <%= star.description %></td>
-			<td>from <%= star.sender_str %></td>
-			<td><%= link_to("[X]","delete_star") if star.owned_by?(current_user.profile) %></td>
-		</tr>
+	<% if @stars.blank? %>
+		<tr class="empty_stars"><td>There are no stars</td></tr>
+	<% else %>
+		<%= render :partial=>"shared/star_row", :collection=>@stars %>
 	<% end %>
 </table>
