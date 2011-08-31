@@ -12,8 +12,17 @@
 	<%= render :partial=>"shared/nav" %>
 	<br/>
 	<br/>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+	<br/>
+	<% unless notice.blank? %>
+	<div class="alert-message warning">
+		<%= notice %>
+  </div>
+	<% end %>
+	<% unless alert.blank? %>
+	<div class="alert-message error">
+  	<%= alert %>
+  </div>
+	<% end %>
 
 	<%= yield %>
 

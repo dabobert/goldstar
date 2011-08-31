@@ -1,46 +1,46 @@
-        new_user_session GET    /users/sign_in(.:format)       {:action=>"new", :controller=>"devise/sessions"}
-            user_session POST   /users/sign_in(.:format)       {:action=>"create", :controller=>"devise/sessions"}
-    destroy_user_session DELETE /users/sign_out(.:format)      {:action=>"destroy", :controller=>"devise/sessions"}
-           user_password POST   /users/password(.:format)      {:action=>"create", :controller=>"devise/passwords"}
-       new_user_password GET    /users/password/new(.:format)  {:action=>"new", :controller=>"devise/passwords"}
-      edit_user_password GET    /users/password/edit(.:format) {:action=>"edit", :controller=>"devise/passwords"}
-                         PUT    /users/password(.:format)      {:action=>"update", :controller=>"devise/passwords"}
-cancel_user_registration GET    /users/cancel(.:format)        {:action=>"cancel", :controller=>"devise/registrations"}
-       user_registration POST   /users(.:format)               {:action=>"create", :controller=>"devise/registrations"}
-   new_user_registration GET    /users/sign_up(.:format)       {:action=>"new", :controller=>"devise/registrations"}
-  edit_user_registration GET    /users/edit(.:format)          {:action=>"edit", :controller=>"devise/registrations"}
-                         PUT    /users(.:format)               {:action=>"update", :controller=>"devise/registrations"}
-                         DELETE /users(.:format)               {:action=>"destroy", :controller=>"devise/registrations"}
-        new_user_session GET    /users/sign_in(.:format)       {:action=>"new", :controller=>"devise/sessions"}
-                         POST   /users/sign_in(.:format)       {:action=>"create", :controller=>"devise/sessions"}
-    destroy_user_session DELETE /users/sign_out(.:format)      {:action=>"destroy", :controller=>"devise/sessions"}
-                         POST   /users/password(.:format)      {:action=>"create", :controller=>"devise/passwords"}
-                         GET    /users/password/new(.:format)  {:action=>"new", :controller=>"devise/passwords"}
-                         GET    /users/password/edit(.:format) {:action=>"edit", :controller=>"devise/passwords"}
-                         PUT    /users/password(.:format)      {:action=>"update", :controller=>"devise/passwords"}
-                         GET    /users/cancel(.:format)        {:action=>"cancel", :controller=>"devise/registrations"}
-                         POST   /users(.:format)               {:action=>"create", :controller=>"devise/registrations"}
-                         GET    /users/sign_up(.:format)       {:action=>"new", :controller=>"devise/registrations"}
-                         GET    /users/edit(.:format)          {:action=>"edit", :controller=>"devise/registrations"}
-                         PUT    /users(.:format)               {:action=>"update", :controller=>"devise/registrations"}
-                         DELETE /users(.:format)               {:action=>"destroy", :controller=>"devise/registrations"}
-             leaderboard POST   /leaderboard(.:format)         {:action=>"create", :controller=>"leaderboards"}
-         new_leaderboard GET    /leaderboard/new(.:format)     {:action=>"new", :controller=>"leaderboards"}
-        edit_leaderboard GET    /leaderboard/edit(.:format)    {:action=>"edit", :controller=>"leaderboards"}
-                         GET    /leaderboard(.:format)         {:action=>"show", :controller=>"leaderboards"}
-                         PUT    /leaderboard(.:format)         {:action=>"update", :controller=>"leaderboards"}
-                         DELETE /leaderboard(.:format)         {:action=>"destroy", :controller=>"leaderboards"}
-                   stars GET    /stars(.:format)               {:action=>"index", :controller=>"stars"}
-                         POST   /stars(.:format)               {:action=>"create", :controller=>"stars"}
-                new_star GET    /stars/new(.:format)           {:action=>"new", :controller=>"stars"}
-               edit_star GET    /stars/:id/edit(.:format)      {:action=>"edit", :controller=>"stars"}
-                    star GET    /stars/:id(.:format)           {:action=>"show", :controller=>"stars"}
-                         PUT    /stars/:id(.:format)           {:action=>"update", :controller=>"stars"}
-                         DELETE /stars/:id(.:format)           {:action=>"destroy", :controller=>"stars"}
-              stars_send POST   /stars/send(.:format)          {:action=>"create", :controller=>"stars/sends"}
-          new_stars_send GET    /stars/send/new(.:format)      {:action=>"new", :controller=>"stars/sends"}
-         edit_stars_send GET    /stars/send/edit(.:format)     {:action=>"edit", :controller=>"stars/sends"}
-                         GET    /stars/send(.:format)          {:action=>"show", :controller=>"stars/sends"}
-                         PUT    /stars/send(.:format)          {:action=>"update", :controller=>"stars/sends"}
-                         DELETE /stars/send(.:format)          {:action=>"destroy", :controller=>"stars/sends"}
-                    root        /(.:format)                    {:action=>"index", :controller=>"stars"}
+        new_user_session GET    /users/sign_in(.:format)       {:controller=>"devise/sessions", :action=>"new"}
+            user_session POST   /users/sign_in(.:format)       {:controller=>"devise/sessions", :action=>"create"}
+    destroy_user_session DELETE /users/sign_out(.:format)      {:controller=>"devise/sessions", :action=>"destroy"}
+           user_password POST   /users/password(.:format)      {:controller=>"devise/passwords", :action=>"create"}
+       new_user_password GET    /users/password/new(.:format)  {:controller=>"devise/passwords", :action=>"new"}
+      edit_user_password GET    /users/password/edit(.:format) {:controller=>"devise/passwords", :action=>"edit"}
+                         PUT    /users/password(.:format)      {:controller=>"devise/passwords", :action=>"update"}
+cancel_user_registration GET    /users/cancel(.:format)        {:controller=>"devise/registrations", :action=>"cancel"}
+       user_registration POST   /users(.:format)               {:controller=>"devise/registrations", :action=>"create"}
+   new_user_registration GET    /users/sign_up(.:format)       {:controller=>"devise/registrations", :action=>"new"}
+  edit_user_registration GET    /users/edit(.:format)          {:controller=>"devise/registrations", :action=>"edit"}
+                         PUT    /users(.:format)               {:controller=>"devise/registrations", :action=>"update"}
+                         DELETE /users(.:format)               {:controller=>"devise/registrations", :action=>"destroy"}
+        new_user_session GET    /users/sign_in(.:format)       {:controller=>"devise/sessions", :action=>"new"}
+                         POST   /users/sign_in(.:format)       {:controller=>"devise/sessions", :action=>"create"}
+    destroy_user_session DELETE /users/sign_out(.:format)      {:controller=>"devise/sessions", :action=>"destroy"}
+                         POST   /users/password(.:format)      {:controller=>"devise/passwords", :action=>"create"}
+                         GET    /users/password/new(.:format)  {:controller=>"devise/passwords", :action=>"new"}
+                         GET    /users/password/edit(.:format) {:controller=>"devise/passwords", :action=>"edit"}
+                         PUT    /users/password(.:format)      {:controller=>"devise/passwords", :action=>"update"}
+                         GET    /users/cancel(.:format)        {:controller=>"devise/registrations", :action=>"cancel"}
+                         POST   /users(.:format)               {:controller=>"devise/registrations", :action=>"create"}
+                         GET    /users/sign_up(.:format)       {:controller=>"devise/registrations", :action=>"new"}
+                         GET    /users/edit(.:format)          {:controller=>"devise/registrations", :action=>"edit"}
+                         PUT    /users(.:format)               {:controller=>"devise/registrations", :action=>"update"}
+                         DELETE /users(.:format)               {:controller=>"devise/registrations", :action=>"destroy"}
+             leaderboard POST   /leaderboard(.:format)         {:controller=>"leaderboards", :action=>"create"}
+         new_leaderboard GET    /leaderboard/new(.:format)     {:controller=>"leaderboards", :action=>"new"}
+        edit_leaderboard GET    /leaderboard/edit(.:format)    {:controller=>"leaderboards", :action=>"edit"}
+                         GET    /leaderboard(.:format)         {:controller=>"leaderboards", :action=>"show"}
+                         PUT    /leaderboard(.:format)         {:controller=>"leaderboards", :action=>"update"}
+                         DELETE /leaderboard(.:format)         {:controller=>"leaderboards", :action=>"destroy"}
+                   stars GET    /stars(.:format)               {:controller=>"stars", :action=>"index"}
+                         POST   /stars(.:format)               {:controller=>"stars", :action=>"create"}
+                new_star GET    /stars/new(.:format)           {:controller=>"stars", :action=>"new"}
+               edit_star GET    /stars/:id/edit(.:format)      {:controller=>"stars", :action=>"edit"}
+                    star GET    /stars/:id(.:format)           {:controller=>"stars", :action=>"show"}
+                         PUT    /stars/:id(.:format)           {:controller=>"stars", :action=>"update"}
+                         DELETE /stars/:id(.:format)           {:controller=>"stars", :action=>"destroy"}
+              stars_send POST   /stars/send(.:format)          {:controller=>"stars/sends", :action=>"create"}
+          new_stars_send GET    /stars/send/new(.:format)      {:controller=>"stars/sends", :action=>"new"}
+         edit_stars_send GET    /stars/send/edit(.:format)     {:controller=>"stars/sends", :action=>"edit"}
+                         GET    /stars/send(.:format)          {:controller=>"stars/sends", :action=>"show"}
+                         PUT    /stars/send(.:format)          {:controller=>"stars/sends", :action=>"update"}
+                         DELETE /stars/send(.:format)          {:controller=>"stars/sends", :action=>"destroy"}
+                    root        /(.:format)                    {:controller=>"stars", :action=>"index"}
