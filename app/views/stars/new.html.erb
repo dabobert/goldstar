@@ -2,6 +2,15 @@
 	<fieldset class="devise">
 		<legend>Send A Star</legend>
 	  <%= form.error_messages %>
+	
+		<% unless user_signed_in? %>
+			<div class="clearfix">
+			  <%= form.label :poster, "Sender" %>
+			  <div class="input">
+			    <%= form.text_field :poster %>
+			  </div>
+			</div>
+		<% end %>
 		<div class="clearfix">
 		  <%= form.label :recipient %>
 		  <div class="input">
@@ -16,7 +25,7 @@
 		</div>
 		<div class="clearfix">
 		  <div class="input">
-		    <button class="btn success">Send <span class="gold">&#9733;</span></button>
+		    <button class="btn success">Send <%= gold_star %></button>
 		  </div>
 		</div>
 	</fieldset>

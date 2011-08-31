@@ -7,11 +7,20 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   
+  has_many :favorites
+  has_many :favorite_stars, :through=>:favorites, :source=>:star
+  
   belongs_to :profile
   
   before_save :create_profile
   
   validates_presence_of :email
+  
+  def is_favorite? star
+    @favorite_stars ||= self.favorite_stars
+    self.favorite_stars.include? star
+  end
+  
   
   private
   

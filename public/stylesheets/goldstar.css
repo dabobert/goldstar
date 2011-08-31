@@ -13,8 +13,21 @@
 	font-size: 9px !important;
 }
 
+a.new_fav {
+	color: grey;
+}
+
+a.new_fav:hover {
+	color: red;
+}
+
+a.fav {
+	color: red;
+}
+
+
 body {
-	padding-top: 40px;
+	padding-top: 60px;
 	padding-left: 100px;
 	padding-right: 100px;
 }

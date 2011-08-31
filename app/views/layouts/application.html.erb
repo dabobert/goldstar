@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>GoldSt.ar</title>
+	<link rel="icon" type="image/gif" href="/images/star_icon.gif" />
 	<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap-1.1.1.min.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
   <%= stylesheet_link_tag :all %>
@@ -10,19 +11,7 @@
 </head>
 <body>
 	<%= render :partial=>"shared/nav" %>
-	<br/>
-	<% unless notice.blank? %>
-	<div class="alert-message warning">
-		<%= notice %>
-  </div>
-	<% end %>
-	<% unless alert.blank? %>
-	<div class="alert-message error">
-  	<%= alert %>
-  </div>
-	<% end %>
-
+	<%= render :partial=>"shared/flash_messages" %>
 	<%= yield %>
-
 </body>
 </html>

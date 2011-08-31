@@ -1,5 +1,5 @@
 class Star < ActiveRecord::Base
-  attr_accessor :recipient
+  attr_accessor :recipient, :poster
   
   belongs_to :sender, :class_name=>"Profile"
   belongs_to :reciever, :class_name=>"Profile"

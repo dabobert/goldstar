@@ -1,4 +1,14 @@
-<h3><%= @prefix %> Stars</h3>
+<h3>
+	<% if user_signed_in? %>
+		<% if @mode == "all"%>
+			All Stars | <%= link_to "My Stars", user_stars_path(current_user) %> </h3>
+		<% else %>
+			<%= link_to "All Stars", stars_path %> | My Stars</h3>
+		<% end %>
+	<% else %>
+		All Stars
+	<% end %>
+</h3>
 <table class="star_table">
 	<% if @stars.blank? %>
 		<tr class="empty_stars"><td>There are no stars</td></tr>

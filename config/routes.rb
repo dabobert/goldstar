@@ -39,10 +39,15 @@ Goldstar::Application.routes.draw do
   resource :leaderboard
   resource :profile
   resource :home
+  resource :help
+  resources :favorites
   resources :users do
     resources :stars
   end
-  resources :stars
+  
+  resources :stars do
+    resources :favorites
+  end
   root :to=> "stars#index"
   
 end
