@@ -1,6 +1,7 @@
 <%= form_for @star do |form| %>
 	<fieldset class="devise">
 		<legend>Send A Star</legend>
+	  <%= form.error_messages %>
 		<div class="clearfix">
 		  <%= form.label :recipient %>
 		  <div class="input">

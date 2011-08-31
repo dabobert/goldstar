@@ -84,6 +84,7 @@ PLATFORMS
 DEPENDENCIES
   devise
   dynamic_form
+  mail
   mysql2 (< 0.3)
   nokogiri
   rails (= 3.0.9)

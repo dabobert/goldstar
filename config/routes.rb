@@ -38,10 +38,8 @@ Goldstar::Application.routes.draw do
   devise_for :users
   resource :leaderboard
   resource :profile
+  resources :users
   resources :stars
-  namespace :stars do
-    resource :send
-  end
   root :to=> "stars#index"
   
 end

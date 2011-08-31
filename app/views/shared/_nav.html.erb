@@ -2,11 +2,12 @@
       <div class="fill">
     <div class="container">
       <h3>
-				<a href="/"><span style="color:gold">&#9733;&#9734;</span>GoldSt.ar</a>
+				<a href="/"><%= filled_star %><%= hollow_star %>GoldSt.ar</a>
 			</h3>
       <ul>
 				<li><%= link_to "Send A Star", new_star_path %></li>
 				<li><%= link_to "Leaderboards", leaderboard_path %></li>
+				<li><%= link_to "Stars", stars_path %></li>
         <% unless user_signed_in? %>
 					<li><%= link_to "Tour", "#" %></li>
 					<li><%= link_to "Pricing", "/pricing" %></li>
@@ -16,9 +17,10 @@
 					<li><%= link_to 'Logout', destroy_user_session_path %></li>
 				<% else %>
 					<li><%= link_to "Sign Up", new_user_registration_path %></li>
-					<li><%= link_to "Login", 	 new_user_session_path %></li>
+					<li><%= link_to "Login", new_user_session_path %></li>
 				<% end %>
 				<li><a href="#">Help</a></li>
+				<%= raw "<li></li><li>Logged in as #{current_user.email}</li>" if user_signed_in? %>
       </ul>
     </div>
   </div>

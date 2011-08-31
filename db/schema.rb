@@ -12,13 +12,6 @@
 
 ActiveRecord::Schema.define(:version => 20110831153229) do
 
-  create_table "auxiliary_email_addresses", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "value"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "email_addresses", :force => true do |t|
     t.integer  "profile_id"
     t.string   "value"
@@ -44,6 +37,7 @@ ActiveRecord::Schema.define(:version => 20110831153229) do
   create_table "users", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.integer  "profile_id"
     t.string   "email",                                 :default => "", :null => false
     t.string   "encrypted_password",     :limit => 128, :default => "", :null => false
     t.string   "reset_password_token"

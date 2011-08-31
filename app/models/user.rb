@@ -9,16 +9,18 @@ class User < ActiveRecord::Base
   
   belongs_to :profile
   
-  after_save :create_profile
+  before_save :create_profile
   
   validates_presence_of :email
   
   private
   
   def create_profile
-    self.build_profile
-    self.profile.save
-    self.profile.email_addresses.create :value=> self.email
+    if self.profile.blank?
+      self.build_profile
+      self.profile.save!
+      self.profile.email_addresses.create! :value=> self.email
+    end
     self.profile
   end
 end

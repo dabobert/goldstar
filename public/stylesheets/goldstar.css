@@ -2,6 +2,16 @@
 	color: gold;
 }
 
+.star_table {
+	width: 800px;
+}
+
+body {
+	padding-top: 40px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
 fieldset.devise legend {
 	border-left: 200px !important; 
 }

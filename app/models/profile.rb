@@ -7,7 +7,13 @@ class Profile < ActiveRecord::Base
   has_many :email_addresses
   
   def self.construct value
-    User.find_by_email(value)  
+    EmailAddress.seek_profile(value) || Profile.construct_via_email!(value)
+  end
+  
+  def self.construct_via_email!(value)
+    profile = Profile.create!
+    profile.email_addresses.create! :value=> value
+    profile
   end
   
 end

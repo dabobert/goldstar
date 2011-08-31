@@ -1,7 +1,10 @@
-Star Index
-<ul>
-	<li>One Fish</li>
-	<li>Two Fish</li>
-	<li>Red Fish</li>
-	<li>Blue Fish</li>
-</ul>
+<table class="star_table">
+	<% @stars.each do |star| %>
+		<tr>
+			<td><%= star.reciever_str %></td>
+			<td>recieved a <%= gold_star %> <%= star.description %></td>
+			<td>from <%= star.sender_str %></td>
+			<td><%= link_to("[X]","delete_star") if star.owned_by?(current_user.profile) %></td>
+		</tr>
+	<% end %>
+</table>
