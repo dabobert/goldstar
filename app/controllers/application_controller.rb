@@ -14,9 +14,14 @@ class ApplicationController < ActionController::Base
     gold_star
     grey_heart
     red_heart
+    heart
   end
-  
-  
+
+  def heart
+    #the heart character is displayed wierd in text mate, which is why i use the entity. ♥
+    #i don't trust raw special chars in all enviorments, editors, ides's and os's
+    @heart ||= "&#9829;"
+  end
   
   def grey_heart
     @grey_heart ||= '<span style="color:grey">&#9829;</span>'

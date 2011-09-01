@@ -1,11 +1,15 @@
 module ApplicationHelper
 
   def render_fav star
-    link_to "&#9829;", star_path(star), :class=>"fav", :method=>:post
+    raw link_to(heart, star_path(star), :class=>"fav", :method=>:post)
   end
   
   def render_new_fav star
-    link_to "&#9829;", star_favorite_path(star), :class=>"new_fav", :method=>:post
+    raw link_to (heart, star_favorites_path(star), :class=>"new_fav", :method=>:post)
+  end
+  
+  def heart
+    raw @heart
   end
 
   def hollow_star

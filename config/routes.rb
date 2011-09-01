@@ -40,6 +40,8 @@ Goldstar::Application.routes.draw do
   resource :profile
   resource :home
   resource :help
+  resource :about
+  resources :stars
   resources :favorites
   resources :users do
     resources :stars

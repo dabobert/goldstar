@@ -10,6 +10,8 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+	<%= debug "now #{request.fullpath}"%>
+	<%= debug "before #{request.referer}"%>
 	<%= render :partial=>"shared/nav" %>
 	<%= render :partial=>"shared/flash_messages" %>
 	<%= yield %>

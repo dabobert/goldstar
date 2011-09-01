@@ -7,21 +7,25 @@
 }
 
 .logged_in_name {
-	padding-left: 35px;
+	padding-left: 145px;
 	padding-top: 10px;
 	color: gold;
 	font-size: 9px !important;
 }
 
 a.new_fav {
+	font-size: 125%;
 	color: grey;
 }
 
 a.new_fav:hover {
+	font-size: 125%;
 	color: red;
+	text-decoration: none;
 }
 
 a.fav {
+	font-size: 125%;
 	color: red;
 }
 
