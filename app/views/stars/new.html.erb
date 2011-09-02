@@ -4,29 +4,10 @@
 	  <%= form.error_messages %>
 	
 		<% unless user_signed_in? %>
-			<div class="clearfix">
-			  <%= form.label :poster, "Sender" %>
-			  <div class="input">
-			    <%= form.text_field :poster %>
-			  </div>
-			</div>
+			<%= f.build_row form.label(:poster, "Sender"), form.text_field(:poster) %>
 		<% end %>
-		<div class="clearfix">
-		  <%= form.label :recipient %>
-		  <div class="input">
-		    <%= form.text_field :recipient %>
-		  </div>
-		</div>
-		<div class="clearfix">
-		  <%= form.label :description %>
-		  <div class="input">
-		    <%= form.text_field :description %>
-		  </div>
-		</div>
-		<div class="clearfix">
-		  <div class="input">
-		    <button class="btn success">Send <%= gold_star %></button>
-		  </div>
-		</div>
+		<%= f.build_row f.label(:recipient), f.text_field(:recipient) %>
+		<%= f.build_row f.label(:description), f.text_field(:description) %>
+		<%= f.build_row nil, "<button class=\"btn success\">Send #{gold_star}</button>") %>
 	</fieldset>
 <% end %>

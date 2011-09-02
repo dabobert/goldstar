@@ -1,7 +1,7 @@
 class Profile < ActiveRecord::Base
   
   has_many :sent_stars, :class_name=>"Star", :foreign_key=>"sender_id"
-  has_many :recieved_stars, :class_name=>"Star", :foreign_key=>"reciever_id"
+  has_many :recieved_stars, :class_name=>"Star", :foreign_key=>"receiver_id"
   
   has_one  :user, :dependent=>:destroy, :autosave=>true
   has_many :email_addresses
@@ -17,7 +17,7 @@ class Profile < ActiveRecord::Base
   end
   
   def stars
-    Star.where("sender_id = ? or reciever_id = ?", self.id, self.id).order("id desc")
+    Star.where("sender_id = ? or receiver_id = ?", self.id, self.id).order("id desc")
   end
   
 end

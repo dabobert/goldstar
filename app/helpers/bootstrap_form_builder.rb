@@ -1,32 +1,63 @@
 class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
-  helpers = field_helpers + 
-    %w(time_zone_select date_select) - 
-    %w(hidden_field fields_for label)
   
-    def bootstrap_wrapper(text)
-       "------#{text}------"
-    end
-    
-    def bootstrap_form_for(*args, &block)
-      options = args.extract_options!
-      options.merge(:builder => CustomFormBuilder)
-      form_for(*(args + [options]), &block)
-    end
-  
-  
-    def email_field(name, options = {})
-      options.reverse_merge! (:size => 12)
-      #bootstrap_wrapper(@template.content_tag(:td, super))
-      @template.content_tag(:td, super)
-  #    ----#{@template.content_tag(:td, super)}"
-    end
-
-    
-    def text_field(name, options = {})
-      "pppp"
-    end
-    
-  #def bootstrap_form_for(      record_or_name_or_array, *args, &proc) 
-  #  form_for(      record_or_name_or_array, *args, &proc) 
-  #end
+  def build_row label, element
+     "<div class=\"clearfix\">
+   		   #{label}
+  		  <div class=\"input\">
+  		    #{element}
+  		  </div>
+  		</div>".html_safe   
+  end
 end
+=begin
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+	<fieldset class="devise">
+		<legend>Sign in</legend>
+		<div class="clearfix">
+		  <%= f.label :email %>
+		  <div class="input">
+		    <%= f.text_field :email %>
+		  </div>
+		</div>
+
+		<div class="clearfix">
+		  <%= f.label :password %>
+		  <div class="input">
+		    <%= f.password_field :password %>
+		  </div>
+		</div>
+
+
+	  <% if devise_mapping.rememberable? -%>
+	    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+	  <% end -%>
+	
+		<div class="clearfix">
+		  <div class="input">
+		    <button class="btn success">Sign in</button>
+		  </div>
+		</div>
+		
+	</fieldset>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+----------------------------------------------------------------
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:builder => BootstrapFormBuilder) do |f| %>
+	<fieldset class="devise">
+		<legend>Sign in</legend>
+		<%= f.build_row f.label( :email), f.text_field( :email) %>
+		<%= f.build_row f.label( :password), f.password_field(:email) %>
+	  <% if devise_mapping.rememberable? -%>
+	    <%= f.build_row f.label(:remember_me), f.check_box(:remember_me) %>
+	  <% end -%>
+		<%= f.build_row nil, '<button class="btn success">') %>		
+	</fieldset>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+
+
+
+
+=end

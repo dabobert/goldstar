@@ -2,10 +2,10 @@
 
 one:
   sender_id: 1
-  reciever_id: 1
+  receiver_id: 1
   description: MyText
 
 two:
   sender_id: 1
-  reciever_id: 1
+  receiver_id: 1
   description: MyText

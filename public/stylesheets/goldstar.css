@@ -39,3 +39,12 @@ body {
 fieldset.devise legend {
 	border-left: 200px !important; 
 }
+
+fieldset.leaderboard {
+	width: 400px;
+	float: left;
+}
+
+fieldset.leaderboard legend {
+	margin-left: 0px;
+}

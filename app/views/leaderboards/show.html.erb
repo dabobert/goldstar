@@ -1,0 +1,32 @@
+<fieldset class="leaderboard">
+	<legend>Top Senders</legend>
+	<table>
+		<tr>
+			<th>Sender</th>
+			<th>#</th>
+		</tr>	
+		<% @top_senders.each do |ranking| %>
+			<tr>
+				<td><%= ranking.sender_str %></td>
+				<td><%= ranking.count %></td>
+			</tr>
+		<% end %>
+	</table>
+</fieldset>
+
+
+<fieldset class="leaderboard">
+	<legend>Top Receivers</legend>
+	<table>
+		<tr>
+			<th>receiver</th>
+			<th>#</th>
+		</tr>	
+		<% @top_receivers.each do |ranking| %>
+			<tr>
+				<td><%= ranking.receiver_str %></td>
+				<td><%= ranking.count %></td>
+			</tr>
+		<% end %>
+	</table>
+</fieldset>

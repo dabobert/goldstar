@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20110831225855) do
 
   create_table "stars", :force => true do |t|
     t.integer  "sender_id"
-    t.integer  "reciever_id"
+    t.integer  "receiver_id"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
