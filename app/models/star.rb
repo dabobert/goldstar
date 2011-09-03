@@ -29,6 +29,8 @@ class Star < ActiveRecord::Base
   
   
   def receiver_str
+    return self.misc if self.receiver_id.blank?
+    
     case self.receiver_network.name
     when "goldstar"
       self.receiver.email_addresses.first
@@ -44,28 +46,22 @@ class Star < ActiveRecord::Base
   
   def set_recipient
     @init = true
-    #puts self.inspect
-    logger.debug("stash: #{@stash}")
-    logger.debug("new: #{self.new_record?}")
-    logger.debug("recipient: #{self.recipient}")
     self.recipient = @stash if self.new_record? #and not(@stash.blank?)
-    logger.debug("reciever: #{self.receiver.id}")
   end
   
   
   def recipient= value
     if @init
-      logger.debug "after init-value: #{value}"
-      logger.debug "source type: #{self.source_type}"
       if self.source_type != "goldstar" and value.blank?
+        #what we do when the receiver of the goldstar is not a "real" person
         #self.receiver = Profile.construct("none", "none")
-        self.misc = "subject goes here"
+        self.misc = "@object"
       else
         self.receiver = Profile.construct(value, self.source_type)
       end
     else
+      #stash the value, so it can be used once @init is set
       @stash = value
-      logger.debug "stashing #{@stash}"
     end
   end
   
