@@ -7,7 +7,7 @@
 }
 
 .logged_in_name {
-	padding-left: 145px;
+	padding-left: 50px;
 	padding-top: 10px;
 	color: gold;
 	font-size: 9px !important;
@@ -43,6 +43,7 @@ fieldset.devise legend {
 fieldset.leaderboard {
 	width: 400px;
 	float: left;
+	margin-right: 50px;
 }
 
 fieldset.leaderboard legend {

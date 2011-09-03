@@ -4,7 +4,11 @@ gem 'rails', '3.0.9'
 gem 'nokogiri'
 gem 'devise'
 gem 'mail'
+#gem 'linguistics'
+#gem 'wordnet'
+gem 'twitter'
 gem 'dynamic_form'
+#gem 'ruby-linkparser'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
