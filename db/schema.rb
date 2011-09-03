@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(:version => 20110903160643) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "source_id"
+    t.string   "source_id"
     t.string   "source_type",         :default => "goldstar"
     t.integer  "sender_network_id",   :default => 1
     t.integer  "receiver_network_id", :default => 1

@@ -6,13 +6,10 @@ class Debug < ActiveRecord::Base
     end
   end
   
-
-  
-  def self.tw array
-    array.each do |tweet|
-      #source_id = tweet.id_str.to_s(36)
-        star = Star.create! :description=>tweet.text, :poster=>tweet.from_user, :recipient=>nil,
-                :source_id=>tweet.id_str, :source_type=>"twitter"
-    end
+  def self.echo_log str
+    logger.debug str
+    puts str
+    str
   end
+
 end

@@ -1,6 +1,6 @@
 class AddSourceToStars < ActiveRecord::Migration
   def self.up
-    add_column :stars, :source_id, :integer
+    add_column :stars, :source_id, :string
     add_column :stars, :source_type, :string, :default=>"goldstar"
   end
 

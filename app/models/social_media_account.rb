@@ -8,7 +8,6 @@ class SocialMediaAccount < ActiveRecord::Base
   
   def self.seek_profile username, network_name
     social_media_account = SocialMediaAccount.where(:username=>username, :network_id=>Network.find_by_name(network_name)).first
-    puts "found: #{social_media_account.inspect}"
     social_media_account.profile unless social_media_account.blank?
   end
 end

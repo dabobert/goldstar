@@ -7,7 +7,7 @@
 		</tr>	
 		<% @top_senders.each do |ranking| %>
 			<tr>
-				<td><%= ranking.sender_str %></td>
+				<td><%= ranking.sender.name %></td>
 				<td><%= ranking.count %></td>
 			</tr>
 		<% end %>
@@ -19,12 +19,12 @@
 	<legend>Top Receivers</legend>
 	<table>
 		<tr>
-			<th>receiver</th>
+			<th>Receiver</th>
 			<th>#</th>
 		</tr>	
 		<% @top_receivers.each do |ranking| %>
 			<tr>
-				<td><%= ranking.receiver_str %></td>
+				<td><%= ranking.receiver.blank? ? "@object" : ranking.receiver.name %></td>
 				<td><%= ranking.count %></td>
 			</tr>
 		<% end %>

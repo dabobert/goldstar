@@ -19,30 +19,6 @@ class Star < ActiveRecord::Base
   end
   
   
-  def sender_str
-    case self.sender_network.name
-    when "goldstar": self.sender.email_addresses.first
-    when "twitter": "@"+self.sender.social_media_accounts.where(:network_id=>self.sender_network_id).first.username
-    else raise "can not display sender_str for star:#{self.id}"
-    end
-  end
-  
-  
-  def receiver_str
-    return self.misc if self.receiver_id.blank?
-    
-    case self.receiver_network.name
-    when "goldstar"
-      self.receiver.email_addresses.first
-    when "twitter"
-      "@"+self.receiver.social_media_accounts.where(:network_id=>self.receiver_network_id).first.username
-    when "none"
-      self.misc
-    else
-      raise "can not display receiver_str for star:#{self.id}"
-    end
-  end
-  
   
   def set_recipient
     @init = true
