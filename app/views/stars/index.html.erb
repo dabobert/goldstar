@@ -9,10 +9,14 @@
 		All Stars
 	<% end %>
 </h3>
-<table class="star_table">
-	<% if @stars.blank? %>
-		<tr class="empty_stars"><td>There are no stars</td></tr>
-	<% else %>
+
+<% if @stars.blank? %>
+	<pre class="debug_dump">
+		There are no stars
+	</pre>
+<% else %>
+	<table class="star_table">
 		<%= render :partial=>"shared/star_row", :collection=>@stars %>
-	<% end %>
-</table>
+	</table>
+<% end %>
+

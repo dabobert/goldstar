@@ -1,13 +1,13 @@
-<%= form_for @star do |form| %>
+<%= form_for @star, :builder => BootstrapFormBuilder do |form| %>
 	<fieldset class="devise">
 		<legend>Send A Star</legend>
 	  <%= form.error_messages %>
 	
 		<% unless user_signed_in? %>
-			<%= f.build_row form.label(:poster, "Sender"), form.text_field(:poster) %>
+			<%= form.build_row form.label(:poster, "Sender"), form.text_field(:poster) %>
 		<% end %>
-		<%= f.build_row f.label(:recipient), f.text_field(:recipient) %>
-		<%= f.build_row f.label(:description), f.text_field(:description) %>
-		<%= f.build_row nil, "<button class=\"btn success\">Send #{gold_star}</button>") %>
+		<%= form.build_row form.label(:recipient), form.text_field(:recipient) %>
+		<%= form.build_row form.label(:description), form.text_field(:description) %>
+		<%= form.build_row nil, "<button class=\"btn success\">Send #{gold_star}</button>" %>
 	</fieldset>
 <% end %>

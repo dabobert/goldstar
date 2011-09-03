@@ -6,6 +6,8 @@ class Star < ActiveRecord::Base
   
   validates_presence_of :description
   
+  after_save :set_star_source
+  
   scope :descending, order("id desc")
   
   def owned_by? profile
@@ -21,6 +23,14 @@ class Star < ActiveRecord::Base
   end
   
   def recipient= value
-    self.receiver = Profile.construct(value)
+    self.receiver = Profile.construct(value, self.source_type)
   end
+  
+  private 
+  
+  def set_star_source
+    self.update_attribute(:source_id, self.id) if self.source_id.blank? and self.source_type == "goldstar"
+  end
+
+    
 end

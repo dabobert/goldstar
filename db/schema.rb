@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110831225855) do
+ActiveRecord::Schema.define(:version => 20110903055034) do
 
   create_table "email_addresses", :force => true do |t|
     t.integer  "profile_id"
@@ -26,9 +26,23 @@ ActiveRecord::Schema.define(:version => 20110831225855) do
     t.datetime "updated_at"
   end
 
+  create_table "interweb_networks", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "profiles", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "social_media_accounts", :force => true do |t|
+    t.string   "username"
+    t.integer  "network_id"
+    t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -39,6 +53,10 @@ ActiveRecord::Schema.define(:version => 20110831225855) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "source_id"
+    t.string   "source_type",         :default => "goldstar"
+    t.integer  "sender_network_id",   :default => 1
+    t.integer  "receiver_network_id", :default => 1
   end
 
   create_table "users", :force => true do |t|
