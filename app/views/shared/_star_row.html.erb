@@ -1,7 +1,7 @@
 <tr>
 	<%= raw "<td> #{current_user.is_favorite?(star_row) ? render_fav(star_row) : render_new_fav(star_row)}</td>" if user_signed_in? %>
-	<td><%= star_row.receiver_str %></td>
+	<td><%= star_row.receiver_name %></td>
 	<td>recieved a <%= gold_star %> <%= star_row.description %></td>
-	<td>from <%= star_row.sender_str %></td>
+	<td>from <%= star_row.sender.name %></td>
 	<td><%= link_to("X", star_path(star_row), :class=>"danger btn small", :method => :delete, :confirm => "Are you sure?" ) if user_signed_in? && star_row.owned_by?(current_user.profile) %></td>
 </tr>

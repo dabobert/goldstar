@@ -19,7 +19,7 @@ class StarsController < ApplicationController
         @star.sender = Profile.construct(params[:star][:poster])
       end
       @star.save!
-      flash[:success] = "You gave a #{@gold_star} to #{@star.receiver_str}"
+      flash[:success] = "You gave a #{@gold_star} to #{@star.receiver_name}"
 
       redirect_to stars_path
     rescue ActiveRecord::RecordInvalid

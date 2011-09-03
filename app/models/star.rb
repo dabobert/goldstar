@@ -22,7 +22,15 @@ class Star < ActiveRecord::Base
   
   def set_recipient
     @init = true
-    self.recipient = @stash if self.new_record? #and not(@stash.blank?)
+    self.recipient = @stash if self.new_record? and not(@stash.blank?)
+  end
+  
+  def receiver_name
+    if self.receiver.blank?
+      self.misc
+    else
+      self.receiver.name
+    end
   end
   
   
