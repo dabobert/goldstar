@@ -12,7 +12,7 @@
 
 <% if @stars.blank? %>
 	<pre class="debug_dump">
-		There are no stars
+		<%= @mode.downcase == "all" ? "There are no stars" : "You have no stars"%>
 	</pre>
 <% else %>
 	<table class="star_table">

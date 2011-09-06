@@ -24,12 +24,23 @@
 			<dd><%= user_fields.text_field(:email) %></dd>
 			<%#= user_fields.build_row user_fields.label(:first_name), user_fields.text_field(:first_name) %>
 		<% end %>
+		</dl>
+		
+		<dl>Email Address(es)
+		<% @profile.email_addresses.each do |email_address|%>
+			<%= fields_for "email_address[]", email_address do |email_address_form| %>
+				<dt><%= email_address_form.label(:value, "Address")%></dt>
+				<dd><%= email_address_form.text_field(:value) %></dd>
+			<% end %>
+		<% end %>
 		
 		<%= fields_for :user do |user_fields| %>
 			<%#= user_fields.build_row user_fields.label(:first_name), user_fields.text_field(:first_name) %>
 			<%#= form.build_row user_fields.label(:last_name), user_fields.text_field(:last_name) %>
 			<%#= form.build_row user_fields.label(:email), user_fields.text_field(:email) %>
 		<% end %>
+		
+		
 		
 		</dl>
 		

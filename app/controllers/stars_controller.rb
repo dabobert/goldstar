@@ -27,7 +27,15 @@ class StarsController < ApplicationController
     end
   end
 
-
+  def index
+    if params[:user_id].blank?
+      @mode = "all"
+      @stars = Star.descending
+    else
+      @mode = "My"
+      @stars = current_user.profile.stars
+    end
+  end
 
   
   def destroy
@@ -41,13 +49,5 @@ class StarsController < ApplicationController
     end
   end
   
-  def index
-    if params[:user_id].blank?
-      @mode = "all"
-      @stars = Star.descending
-    else
-      @mode = "My"
-      @stars = current_user.profile.stars
-    end
-  end
+
 end
