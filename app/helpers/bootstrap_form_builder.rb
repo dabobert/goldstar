@@ -1,13 +1,33 @@
 class BootstrapFormBuilder < ActionView::Helpers::FormBuilder
   
+  def fields_for(record_name, record_object = nil, fields_options = {}, &block)
+    super
+  end
+  
   def build_row label, element
+    if element.kind_of? Array
+        elements = element.each do |thing|
+         "<div class=\"input\">
+    		    #{thing}
+    		  </div>"
+        end.join("\n")
+       "<div class=\"clearfix\">
+     		   #{label}
+     		   #{elememts}
+    		</div>".html_safe
+    else
      "<div class=\"clearfix\">
    		   #{label}
   		  <div class=\"input\">
   		    #{element}
   		  </div>
-  		</div>".html_safe   
+  		</div>".html_safe
+		end
   end
+  
+  
+  
+
 end
 =begin
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>

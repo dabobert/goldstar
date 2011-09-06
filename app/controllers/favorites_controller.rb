@@ -1,5 +1,6 @@
 class FavoritesController < ApplicationController
-
+  before_filter :authenticate_user!
+  
   def create
     begin 
       current_user.favorites.create :star_id=>params[:star_id]

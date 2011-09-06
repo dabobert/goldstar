@@ -27,9 +27,7 @@ class User < ActiveRecord::Base
   
   def create_profile
     if self.profile.blank?
-      self.build_profile
-      self.profile.save!
-      self.profile.email_addresses.create! :value=> self.email
+      self.profile = Profile.construct self.email
     end
     self.profile
   end

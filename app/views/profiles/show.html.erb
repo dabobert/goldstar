@@ -1,0 +1,38 @@
+<%= form_for @profile, :builder => BootstrapFormBuilder do |form| %>
+	<fieldset class="devise">
+		<legend>Profile</legend>
+		
+		
+	  <%= form.error_messages %>
+		
+		<dl>
+			
+		<%#= form.build_row form.label(:last_name), form.text_field(:last_name) %>
+		
+		<%= fields_for @profile.user do |user_fields| %>
+	
+			<%= debug user_fields.class.name %>
+			<%= debug form.class.name %>
+			
+			<dt><%= user_fields.label(:first_name)%></dt>
+			<dd><%= user_fields.text_field(:first_name) %></dd>
+			
+			<dt><%= user_fields.label(:last_name) %></dt>
+			<dd><%= user_fields.text_field(:last_name) %></dd>
+			
+			<dt><%= user_fields.label(:email, "Login" )%></dt>
+			<dd><%= user_fields.text_field(:email) %></dd>
+			<%#= user_fields.build_row user_fields.label(:first_name), user_fields.text_field(:first_name) %>
+		<% end %>
+		
+		<%= fields_for :user do |user_fields| %>
+			<%#= user_fields.build_row user_fields.label(:first_name), user_fields.text_field(:first_name) %>
+			<%#= form.build_row user_fields.label(:last_name), user_fields.text_field(:last_name) %>
+			<%#= form.build_row user_fields.label(:email), user_fields.text_field(:email) %>
+		<% end %>
+		
+		</dl>
+		
+		<%= form.build_row nil, "<button class=\"btn success\">Save Changes</button>" %>
+	</fieldset>
+<% end %>

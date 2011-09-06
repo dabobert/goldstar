@@ -7,6 +7,9 @@ class Profile < ActiveRecord::Base
   has_many :email_addresses
   has_many :social_media_accounts
   
+  accepts_nested_attributes_for :user
+  accepts_nested_attributes_for :email_addresses
+  
   def self.construct(value, network="goldstar")
     case network
     when "goldstar": EmailAddress.seek_profile(value) || Profile.construct_via_email!(value)
@@ -34,12 +37,12 @@ class Profile < ActiveRecord::Base
   
   def name_abbr
     unless self.user.blank?
-      @alias ||= "#{self.first_name} #{self.last_name[0].upcase}".strip
+      @alias ||= "#{self.user.first_name} #{self.user.last_name[0].chr.upcase unless self.user.last_name.blank?}".strip
     end
   end
   
   def name
-    if self.name_abbr
+    if not(self.name_abbr.blank?)
       self.name_abbr
     elsif not(self.email_addresses.blank?)
       self.email_addresses.first

@@ -3,7 +3,7 @@
 }
 
 .star_table {
-	width: 800px;
+	width: 850px;
 }
 
 .logged_in_name {
@@ -48,4 +48,8 @@ fieldset.leaderboard {
 
 fieldset.leaderboard legend {
 	margin-left: 0px;
+}
+
+h2 {
+	padding-bottom: 10px;
 }
