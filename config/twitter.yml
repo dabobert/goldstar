@@ -1,0 +1,17 @@
+development:
+  consumer_key: 6HQpyQ4cdCc5Fs8ew7aIcA
+  consumer_secret: llv01PKP3OuBOF5Usb5FSey099q6zMepGtSzIiGhw
+  oauth_token: 365639730-VvC4UQnGhDyCAzgnF3XY3nUuLXbcO0aqGJcYxef5
+  oauth_token_secret: LgzFCfA9sMLEslnVkqa4VlchSuD1lNAkjQLQDoQ2g
+staging:
+  consumer_key: 6HQpyQ4cdCc5Fs8ew7aIcA
+  consumer_secret: llv01PKP3OuBOF5Usb5FSey099q6zMepGtSzIiGhw
+  oauth_token: 365639730-VvC4UQnGhDyCAzgnF3XY3nUuLXbcO0aqGJcYxef5
+  oauth_token_secret: LgzFCfA9sMLEslnVkqa4VlchSuD1lNAkjQLQDoQ2g
+production:
+  consumer_key: 6HQpyQ4cdCc5Fs8ew7aIcA
+  consumer_secret: llv01PKP3OuBOF5Usb5FSey099q6zMepGtSzIiGhw
+  oauth_token: 365639730-VvC4UQnGhDyCAzgnF3XY3nUuLXbcO0aqGJcYxef5
+  oauth_token_secret: LgzFCfA9sMLEslnVkqa4VlchSuD1lNAkjQLQDoQ2g
+  
+  

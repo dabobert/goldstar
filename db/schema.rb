@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110903160643) do
+ActiveRecord::Schema.define(:version => 20110906184647) do
 
   create_table "email_addresses", :force => true do |t|
     t.integer  "profile_id"
@@ -45,6 +45,8 @@ ActiveRecord::Schema.define(:version => 20110903160643) do
     t.integer  "profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "oauth_token"
+    t.string   "oauth_token_secret"
   end
 
   create_table "stars", :force => true do |t|
