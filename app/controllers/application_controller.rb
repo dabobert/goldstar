@@ -42,4 +42,8 @@ class ApplicationController < ActionController::Base
   def filled_star
     @filled_star ||= '<span style="color:gold">&#9733;</span>'
   end
+  
+  def get_twitter_keys
+    @twitter_config = YAML.load(File.read(Rails.root.join('config', 'twitter.yml')))[Rails.env]
+  end
 end

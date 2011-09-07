@@ -40,12 +40,15 @@ Goldstar::Application.routes.draw do
   resource :profile
   resource :home
   resource :help
+  resource :twitter 
   resource :about
   resources :stars
   resources :favorites
   resources :users do
     resources :stars
   end
+  
+  
   
   resources :stars do
     resources :favorites
